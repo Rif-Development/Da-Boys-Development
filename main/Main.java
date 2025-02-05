@@ -23,6 +23,8 @@ public class Main{
         // MAKING THE SCREEN VISABLE
         window.setVisible(true);
 
+        gamePanel.startGameThread();
+
     }
     
 }
