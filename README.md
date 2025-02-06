@@ -9,9 +9,9 @@ This is an open repository for Da Boys Development. We are working together to m
   Partners:         Nathan Tullar, 
                     Ezra Abregana, 
                     Alex Canterbury, 
-                    Nathan Churchman
+                    Nathan Churchman  
   Play Testers:     Lucas Scriggs, 
                     Tyler Scriggs, 
-                    Kotake (Sharp) Sawada,  
+                    Kotake (Sharp) Sawada, 
                     Dawson Maness
                     
