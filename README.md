@@ -13,5 +13,11 @@ This is an open repository for Da Boys Development. We are working together to m
   Play Testers:     Lucas Scriggs, 
                     Tyler Scriggs, 
                     Kotake (Sharp) Sawada, 
-                    Dawson Maness
+                    Dawson Maness  
+  Music Team:       Nathan Tullar, 
+                    Jacob Everette, 
+                    Alex Canterbury  
+  Art Team:         Nathan Churchman, 
+                    Amber, 
+                    Ezra Abregana
                     
