@@ -6,10 +6,11 @@ This is an open repository for Da Boys Development. We are working together to m
 
 ## Team members:
   Head Developer:   Wyatt Churchman  
-  Partners:         Nathan Tullar, 
+  Partners:         Wyatt Churchman, 
+                    Nathan Churchman, 
+                    Nathan Tullar, 
                     Ezra Abregana, 
-                    Alex Canterbury, 
-                    Nathan Churchman  
+                    Alex Canterbury  
   Play Testers:     Lucas Scriggs, 
                     Tyler Scriggs, 
                     Kotake (Sharp) Sawada, 
