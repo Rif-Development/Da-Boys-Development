@@ -1,6 +1,7 @@
 package src.entity;
 
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -22,6 +23,12 @@ public final class Player extends Entity {
 
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+
+        solidArea = new Rectangle();
+        solidArea.x = 8;
+        solidArea.y = 20;
+        solidArea.width = 32;
+        solidArea.height = 28;
 
         setDefaultValues();
         getPlayerImage();
@@ -65,26 +72,44 @@ public final class Player extends Entity {
             if(keyH.upPressed == true){
 
                 direction = "up";
-                worldY -= speed; // playerY = playerY - playerSpeed;
     
             }
             else if(keyH.downPressed == true){
     
                 direction = "down";
-                worldY += speed; // playerY = playerY + playerSpeed;
     
             }
             else if(keyH.leftPressed == true){
     
                 direction = "left";
-                worldX -= speed; // playerX = playerX - playerSpeed;
     
             }
             else if(keyH.rightPressed == true){
     
                 direction = "right";
-                worldX += speed; // playerX = playerX + playerSpeed;
     
+            }
+
+            //CHECK TILE COLLISION
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            //IF COLLISION IS FALSE, PLAYER CAN MOVE
+            if(collisionOn == false){
+
+                switch(direction){
+
+                case "up": worldY -= speed; // playerY = playerY - playerSpeed;
+                    break;
+                case "down": worldY += speed; // playerY = playerY + playerSpeed;
+                    break;
+                case "left": worldX -= speed; // playerX = playerX - playerSpeed;
+                    break;
+                case "right": worldX += speed; // playerX = playerX + playerSpeed;
+                    break;
+
+                }
+
             }
     
             spriteCounter++;
