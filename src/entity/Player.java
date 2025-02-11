@@ -25,10 +25,10 @@ public final class Player extends Entity {
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
         solidArea = new Rectangle();
-        solidArea.x = 8;
+        solidArea.x = 12;
         solidArea.y = 20;
-        solidArea.width = 32;
-        solidArea.height = 28;
+        solidArea.width = 24;
+        solidArea.height = 27;
 
         setDefaultValues();
         getPlayerImage();
@@ -67,11 +67,16 @@ public final class Player extends Entity {
 
     public void update(){
 
-        if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true ){
+        if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true){
 
             if(keyH.upPressed == true){
 
                 direction = "up";
+    
+            }
+            else if(keyH.rightPressed == true){
+    
+                direction = "right";
     
             }
             else if(keyH.downPressed == true){
@@ -83,12 +88,7 @@ public final class Player extends Entity {
     
                 direction = "left";
     
-            }
-            else if(keyH.rightPressed == true){
-    
-                direction = "right";
-    
-            }
+            } 
 
             //CHECK TILE COLLISION
             collisionOn = false;
@@ -99,14 +99,10 @@ public final class Player extends Entity {
 
                 switch(direction){
 
-                case "up": worldY -= speed; // playerY = playerY - playerSpeed;
-                    break;
-                case "down": worldY += speed; // playerY = playerY + playerSpeed;
-                    break;
-                case "left": worldX -= speed; // playerX = playerX - playerSpeed;
-                    break;
-                case "right": worldX += speed; // playerX = playerX + playerSpeed;
-                    break;
+                case "up" -> worldY -= speed; // playerY = playerY - playerSpeed;
+                case "down" -> worldY += speed; // playerY = playerY + playerSpeed;
+                case "left" -> worldX -= speed; // playerX = playerX - playerSpeed;
+                case "right" -> worldX += speed; // playerX = playerX + playerSpeed;
 
                 }
 

@@ -64,36 +64,34 @@ public final class TileManager {
         try {
 
             InputStream is = getClass().getResourceAsStream(filePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
-            int col = 0;
-            int row = 0;
-
-            while(col < gp.maxWorldCol && row < gp.maxWorldRow){
-
-                String line = br.readLine();
-
-                while(col < gp.maxWorldCol){
-
-                    String numbers[] = line.split(" ");
-
-                    int num = Integer.parseInt(numbers[col]);
-
-                    mapTileNum[col][row] = num;
-                    col++;
-
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+                int col = 0;
+                int row = 0;
+                
+                while(col < gp.maxWorldCol && row < gp.maxWorldRow){
+                    
+                    String line = br.readLine();
+                    
+                    while(col < gp.maxWorldCol){
+                        
+                        String numbers[] = line.split(" ");
+                        
+                        int num = Integer.parseInt(numbers[col]);
+                        
+                        mapTileNum[col][row] = num;
+                        col++;
+                        
+                    }
+                    
+                    if(col == gp.maxWorldCol){
+                        
+                        col = 0;
+                        row++;
+                        
+                    }
+                    
                 }
-
-                if(col == gp.maxWorldCol){
-
-                    col = 0;
-                    row++;
-
-                }
-
             }
-
-            br.close();
     
         } catch (Exception e) {
         }
