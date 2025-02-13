@@ -26,6 +26,7 @@ public final class TileManager {
 
     }
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public void getTileImage(){
 
         try {
@@ -59,6 +60,7 @@ public final class TileManager {
 
     }
 
+    @SuppressWarnings("UseSpecificCatch")
     public void loadMap(String filePath){
 
         try {

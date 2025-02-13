@@ -44,6 +44,7 @@ public final class Player extends Entity {
 
     }
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public void getPlayerImage(){
 
         try {

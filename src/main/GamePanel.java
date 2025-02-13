@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import src.entity.Player;
+import src.object.SuperObject;
 import src.tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -34,7 +35,10 @@ public class GamePanel extends JPanel implements Runnable{
     KeyHandler keyH = new KeyHandler();
     Thread gameThread; // DECLARING gameThread
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
+    public SuperObject obj[] = new SuperObject[10]; //THE "10" MEANS HOW MANY OBJECTS CAN BE DISPLAYED AT THE SAME TIME. WE CAN ALWAYS INCREASE THIS NUMBER
+
 
     // CONSTRUCTOR FOR GamePanel
     public GamePanel(){

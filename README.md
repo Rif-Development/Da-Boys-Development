@@ -2,7 +2,7 @@
 
 Date Created: Febuary 4, 2025
 
-This is an open repository for Da Boys Development. We are working together to make a game in the future that will be a RPG Fantasy game.
+This is an open repository for Da Boys Development Studio. We are working together to make a game, which in the future will be a RPG Fantasy game.
 
 ## Team members:
   Head Developer:   Wyatt Churchman  
