@@ -25,10 +25,10 @@ public final class Player extends Entity {
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
         solidArea = new Rectangle();
-        solidArea.x = 12;
-        solidArea.y = 20;
-        solidArea.width = 24;
-        solidArea.height = 27;
+        solidArea.x = 14;
+        solidArea.y = 16;
+        solidArea.width = 35;
+        solidArea.height = 44;
 
         setDefaultValues();
         getPlayerImage();
@@ -53,9 +53,9 @@ public final class Player extends Entity {
             up2 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatUp2.png"));
             down1 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatDown1.png"));
             down2 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatDown2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatLeft1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatLeft2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatRight1.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/res/player/Guts1.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/res/player/Guts1.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/GutsRight1.png"));
             right2 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatRight2.png"));
             
         } catch (IOException e) {
@@ -75,17 +75,17 @@ public final class Player extends Entity {
                 direction = "up";
     
             }
-            else if(keyH.rightPressed == true){
+            if(keyH.rightPressed == true){
     
                 direction = "right";
     
             }
-            else if(keyH.downPressed == true){
+            if(keyH.downPressed == true){
     
                 direction = "down";
     
             }
-            else if(keyH.leftPressed == true){
+            if(keyH.leftPressed == true){
     
                 direction = "left";
     
