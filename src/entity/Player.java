@@ -58,7 +58,7 @@ public final class Player extends Entity {
             right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/GutsRight1.png"));
             right2 = ImageIO.read(getClass().getResourceAsStream("/res/player/CatRight2.png"));
             
-        } catch (IOException e) {
+        } catch(IOException e) {
 
             e.printStackTrace();
         
@@ -68,63 +68,51 @@ public final class Player extends Entity {
 
     public void update(){
 
-        if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true){
+        if(keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed) {
 
-            if(keyH.upPressed == true){
+            // Determine movement direction (priority order matters)
+            if(keyH.upPressed && !keyH.downPressed && !keyH.leftPressed && !keyH.rightPressed) {
 
                 direction = "up";
-    
-            }
-            if(keyH.rightPressed == true){
-    
-                direction = "right";
-    
-            }
-            if(keyH.downPressed == true){
-    
-                direction = "down";
-    
-            }
-            if(keyH.leftPressed == true){
-    
-                direction = "left";
-    
-            } 
 
-            //CHECK TILE COLLISION
+            }else if(keyH.downPressed && !keyH.upPressed && !keyH.leftPressed && !keyH.rightPressed) {
+
+                direction = "down";
+
+            }else if(keyH.leftPressed && !keyH.rightPressed && !keyH.upPressed && !keyH.downPressed) {
+
+                direction = "left";
+
+            }else if(keyH.rightPressed && !keyH.leftPressed && !keyH.upPressed && !keyH.downPressed) {
+
+                direction = "right";
+
+            }
+        
+            // Check for tile collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
+        
+            // Move if no collision
+            if(!collisionOn) {
 
-            //IF COLLISION IS FALSE, PLAYER CAN MOVE
-            if(collisionOn == false){
+                switch(direction) {
 
-                switch(direction){
-
-                case "up" -> worldY -= speed; // playerY = playerY - playerSpeed;
-                case "down" -> worldY += speed; // playerY = playerY + playerSpeed;
-                case "left" -> worldX -= speed; // playerX = playerX - playerSpeed;
-                case "right" -> worldX += speed; // playerX = playerX + playerSpeed;
+                    case "up" -> worldY -= speed;
+                    case "down" -> worldY += speed;
+                    case "left" -> worldX -= speed;
+                    case "right" -> worldX += speed;
 
                 }
 
             }
-    
-            spriteCounter++;
-            if(spriteCounter > 14){
-    
-                if(spriteNum == 1){
-    
-                    spriteNum = 2;
-    
-                }
-                else if(spriteNum == 2){
-    
-                    spriteNum = 1;
-    
-                }
-    
+        
+            // Sprite Animation Logic
+            if(++spriteCounter > 14) {
+
+                spriteNum = (spriteNum == 1) ? 2 : 1;
                 spriteCounter = 0;
-    
+
             }
 
         }
