@@ -11,7 +11,7 @@ public class Main{
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // ALLOWS EXIT WHEN CLOSING THE WINDOW
         window.setResizable(false); // RESIZING THE WINDOW IS SET TO false
-        window.setTitle("2D Adventure"); //TITLE OF THE GAME
+        window.setTitle("Pretty Much Just A Guts Game At This Point"); //TITLE OF THE GAME
 
         // CREATION OF NEW OBJECT gamePanel && ADDING IT TO window OBJECT
         GamePanel gamePanel = new GamePanel();
