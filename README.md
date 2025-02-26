@@ -7,19 +7,11 @@ This is an open repository for Da Boys Development Studio. We are working togeth
 ## Team members:
     Head Developer:   Wyatt Churchman
     
-    Partners:         Wyatt Churchman, 
-                      Nathan Churchman, 
-                      Nathan Tullar, 
-                      Ezra Abregana, 
-                      Alex Canterbury  
-    Play Testers:     Lucas Scriggs, 
-                      Tyler Scriggs, 
-                      Kotake (Sharp) Sawada, 
-                      Dawson Maness  
-    Music Team:       Nathan Tullar, 
-                      Jacob Everette, 
-                      Alex Canterbury  
-    Art Team:         Nathan Churchman, 
-                      Amber, 
-                      Ezra Abregana
+    Partners:         Wyatt Churchman, Nathan Churchman, Nathan Tullar, Ezra Abregana, Alex Canterbury
+    
+    Play Testers:     Lucas Scriggs, Tyler Scriggs, Kotake (Sharp) Sawada, Dawson Maness
+    
+    Music Team:       Nathan Tullar, Jacob Everette, Alex Canterbury
+    
+    Art Team:         Nathan Churchman, Amber, Ezra Abregana
                     
