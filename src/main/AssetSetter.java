@@ -1,5 +1,6 @@
 package src.main;
 
+import src.object.OBJ_Boots;
 import src.object.OBJ_Chest;
 import src.object.OBJ_Door;
 import src.object.OBJ_Key;
@@ -47,6 +48,11 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_Chest();            //This is creating the object
         gp.obj[6].worldX = 10 * gp.tileSize;    //This is placing the object on the x-axis (the number being multiplied by the tileSize is the tile number of which the object will be placed on)
         gp.obj[6].worldY = 8 * gp.tileSize;     //This is placing the object on the y-axis (the number being multiplied by the tileSize is the tile number of which the object will be placed on)
+
+        //Boots
+        gp.obj[7] = new OBJ_Boots();            //This is creating the object
+        gp.obj[7].worldX = 37 * gp.tileSize;    //This is placing the object on the x-axis (the number being multiplied by the tileSize is the tile number of which the object will be placed on)
+        gp.obj[7].worldY = 42 * gp.tileSize;    //This is placing the object on the y-axis (the number being multiplied by the tileSize is the tile number of which the object will be placed on)
 
     }
     

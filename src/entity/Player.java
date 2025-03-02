@@ -126,6 +126,7 @@ public final class Player extends Entity {
 
     }
 
+    // Object interaction effects
     public void pickUpObject(int i){
 
         if(i != 999){
@@ -134,6 +135,7 @@ public final class Player extends Entity {
 
             switch(objectName){
             case "Key" -> {
+                gp.playSE(1);
                 hasKey++;
                 gp.obj[i] = null;
                 System.out.println("Key: " + hasKey);
@@ -141,12 +143,18 @@ public final class Player extends Entity {
             case "Door" -> {
                 if(hasKey > 0){
 
+                    gp.playSE(3);
                     gp.obj[i] = null;
                     hasKey--;
 
                 }
                 System.out.println("Key: " + hasKey);
-                }    
+                }
+            case "Boots" -> {
+                gp.playSE(2);
+                speed += 1;     // This is an increase to the players movement speed
+                gp.obj[i] = null;
+            }        
             }
 
         }

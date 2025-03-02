@@ -25,17 +25,21 @@ public class GamePanel extends JPanel implements Runnable{
     // WORLD SETTINGS
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
+    // public final int worldWidth = tileSize * maxWorldCol;    Might not need but saving it just in case
+    // public final int worldHeight = tileSize * maxWorldRow;   Might not need but saving it just in case
 
-    //FPS
+    // FPS
     int FPS = 60;
 
+    // SYSTEM
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
-    Thread gameThread; // DECLARING gameThread
+    Sound sound = new Sound();
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
+    Thread gameThread; // DECLARING gameThread
+
+    // ENTITY AND OBJECT
     public Player player = new Player(this,keyH);
     public SuperObject obj[] = new SuperObject[10]; //THE "10" MEANS HOW MANY OBJECTS CAN BE DISPLAYED AT THE SAME TIME. WE CAN ALWAYS INCREASE THIS NUMBER
 
@@ -55,6 +59,8 @@ public class GamePanel extends JPanel implements Runnable{
     public void setUpGame(){
 
         aSetter.setObject();
+
+        playMusic(0); // Grabs index from Sound.java
 
     }
 
@@ -122,7 +128,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
-    //This calls all draw functions
+    // This calls all draw functions
     @Override
     public void paintComponent(Graphics g){
 
@@ -130,22 +136,45 @@ public class GamePanel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D)g;
 
-        //Draws Tiles
+        // Draws Tiles
         tileM.draw(g2);
 
         /* Object: if objects are having errors later on change this for loop back to
         for(int i = 0; i < obj.length; i++) */
         for (SuperObject obj1 : obj) {
-            //By checking null, we make sure we don't get a null pointer error
+            // By checking null, we make sure we don't get a null pointer error
             if (obj1 != null) {
                 obj1.draw(g2, this);
             }
         }
 
-        //Draws player
+        // Draws player
         player.draw(g2);
 
         g2.dispose();
+
+    }
+
+    // Sounds
+    public void playMusic(int i){
+
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+
+    }
+
+    public void stopMusic(){
+
+        sound.stop();
+
+    }
+
+    // Play sound effect
+    public void playSE(int i){
+
+        sound.setFile(i);
+        sound.play();
 
     }
 
