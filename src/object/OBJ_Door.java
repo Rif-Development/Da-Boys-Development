@@ -3,21 +3,23 @@ package src.object;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class OBJ_Key extends SuperObject{
+public class OBJ_Door extends SuperObject {
 
     @SuppressWarnings("CallToPrintStackTrace")
-    public OBJ_Key(){
+    public OBJ_Door(){
 
-        name = "Key";
+        name = "Door";
         try{
 
-            image = ImageIO.read(getClass().getResourceAsStream("/res/objects/key.png"));
+            image = ImageIO.read(getClass().getResourceAsStream("/res/objects/door.png"));
 
         }catch(IOException e){
 
             e.printStackTrace();
 
         }
+
+        collision = true;
 
         /* This is an example on how to change the collision on an object.
            You would need to put it here within the code.
@@ -31,4 +33,3 @@ public class OBJ_Key extends SuperObject{
     }
 
 }
-

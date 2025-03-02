@@ -3,15 +3,15 @@ package src.object;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class OBJ_Key extends SuperObject{
+public class OBJ_Chest extends SuperObject {
 
     @SuppressWarnings("CallToPrintStackTrace")
-    public OBJ_Key(){
+    public OBJ_Chest(){
 
-        name = "Key";
+        name = "Chest";
         try{
 
-            image = ImageIO.read(getClass().getResourceAsStream("/res/objects/key.png"));
+            image = ImageIO.read(getClass().getResourceAsStream("/res/objects/chest.png"));
 
         }catch(IOException e){
 
@@ -31,4 +31,3 @@ public class OBJ_Key extends SuperObject{
     }
 
 }
-

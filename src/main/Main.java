@@ -24,6 +24,7 @@ public class Main{
         // MAKING THE SCREEN VISABLE
         window.setVisible(true);
 
+        gamePanel.setUpGame();      // SETS OBJECTS INTO WORLD
         gamePanel.startGameThread();
 
     }

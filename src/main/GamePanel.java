@@ -51,6 +51,13 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
+    //Setts objects into world. Pulls from AssetSetter.java
+    public void setUpGame(){
+
+        aSetter.setObject();
+
+    }
+
     // CONDSTRUCTING gameThread INTO A Thread
     public void startGameThread(){
 
@@ -68,6 +75,7 @@ public class GamePanel extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
+        @SuppressWarnings("unused")
         int drawCount = 0; // FPS
 
         while(gameThread != null){
@@ -98,7 +106,7 @@ public class GamePanel extends JPanel implements Runnable{
             // FPS DISPLAYER
             if(timer >= 1000000000){
 
-                System.out.println("FPS: " + drawCount);
+                // System.out.println("FPS: " + drawCount); This displays the FPS in the terminal
                 drawCount = 0;
                 timer = 0;
 
@@ -114,6 +122,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
+    //This calls all draw functions
     @Override
     public void paintComponent(Graphics g){
 
@@ -121,8 +130,19 @@ public class GamePanel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D)g;
 
+        //Draws Tiles
         tileM.draw(g2);
 
+        /* Object: if objects are having errors later on change this for loop back to
+        for(int i = 0; i < obj.length; i++) */
+        for (SuperObject obj1 : obj) {
+            //By checking null, we make sure we don't get a null pointer error
+            if (obj1 != null) {
+                obj1.draw(g2, this);
+            }
+        }
+
+        //Draws player
         player.draw(g2);
 
         g2.dispose();
